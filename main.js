@@ -1,3 +1,9 @@
+class IncorrectInput extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "IncorrectInputError";
+  }
+}
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -9,7 +15,28 @@ function init(){
     let firstNum = document.querySelector('#first-num').value;
     let secondNum = document.querySelector('#second-num').value;
     let operator = document.querySelector('#operator').value;
-    output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+    let result1, result2;
+    try{
+      result1 = isNaN(firstNum);
+      if(isNaN(firstNum)){
+        throw new TypeError("Please use numbers");
+      }  
+      result2 = isNaN(secondNum);
+      if(isNaN(secondNum)){
+        throw new IncorrectInput("Please use only numbers");
+      }  
+    }catch(err){
+      console.log(err.message);
+
+    }finally{
+      if(!result1 && !result2){
+        output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+      }
+      else{
+        alert("Please enter numbers for the first and second field.");
+      }
+    }
+    //output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
   });
 
   let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
@@ -115,5 +142,37 @@ function init(){
     print(x);
   });
 
+  // try{
+  //   var check = false;
+  //   const button = document.getElementById("log");
+  //   button = document.getElementById("error");
+  // } catch(err){
+  //   check = true;
+  //   console.log("An error has occured");
+  //   console.log(err);
+  // }finally{
+  //   if(check){
+  //     console.log("Please resolve error");
+  //   } 
+  //   else{
+  //     console.log("No errors");
+  //   }
+  // } 
+
+  // try{
+  //   var check = false;
+  //   const button = document.getElementById("log");
+  // } catch(err){
+  //   check = true;
+  //   console.log("An error has occured");
+  //   console.log(err);
+  // }finally{
+  //   if(check){
+  //     console.log("Please resolve error");
+  //   } 
+  //   else{
+  //     console.log("No errors");
+  //   }
+  // } 
 }
 
