@@ -142,38 +142,5 @@ function init(){
   document.getElementById("globalError").addEventListener("click", function(event){
     print(x);
   });
-
-  // try{
-  //   var check = false;
-  //   const button = document.getElementById("log");
-  //   button = document.getElementById("error");
-  // } catch(err){
-  //   check = true;
-  //   console.log("An error has occured");
-  //   console.log(err);
-  // }finally{
-  //   if(check){
-  //     console.log("Please resolve error");
-  //   } 
-  //   else{
-  //     console.log("No errors");
-  //   }
-  // } 
-
-  // try{
-  //   var check = false;
-  //   const button = document.getElementById("log");
-  // } catch(err){
-  //   check = true;
-  //   console.log("An error has occured");
-  //   console.log(err);
-  // }finally{
-  //   if(check){
-  //     console.log("Please resolve error");
-  //   } 
-  //   else{
-  //     console.log("No errors");
-  //   }
-  // } 
 }
 
