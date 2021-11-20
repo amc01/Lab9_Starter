@@ -16,11 +16,13 @@ function init(){
     let secondNum = document.querySelector('#second-num').value;
     let operator = document.querySelector('#operator').value;
     let result1, result2;
+
     try{
       result1 = isNaN(firstNum);
       if(isNaN(firstNum)){
         throw new TypeError("Please use numbers");
       }  
+
       result2 = isNaN(secondNum);
       if(isNaN(secondNum)){
         throw new IncorrectInput("Please use only numbers");
@@ -36,7 +38,6 @@ function init(){
         alert("Please enter numbers for the first and second field.");
       }
     }
-    //output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
   });
 
   let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
