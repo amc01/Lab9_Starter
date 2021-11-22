@@ -138,7 +138,7 @@ function init(){
     console.log(errorMSG);
   }
 
-  // Console End Timer
+  // Console Global Error
   document.getElementById("globalError").addEventListener("click", function(event){
     print(x);
   });
